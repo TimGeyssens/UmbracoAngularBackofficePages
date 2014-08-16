@@ -1,0 +1,31 @@
+﻿<umb-panel ng-controller="People.PersonEditController">
+    <umb-header>
+        <div class="span4">
+            <input type="text"
+                   class="umb-headline"
+                   localize="placeholder"
+                   select-on-focus
+                   placeholder="@placeholders_entername"
+                   ng-model="person.firstName" />
+        </div>
+        <div class="span8">
+            <div class="btn-toolbar pull-right umb-btn-toolbar">
+                <a href class="btn btn-primary" ng-click="save(person)" prevent-default>Save</a>
+            </div>
+        </div>
+    </umb-header>
+
+    <div class="umb-panel-body">
+        <div class="umb-pane">
+            <umb-control-group label="First name" description="Person's first name'">
+                <input type="text" class="umb-editor umb-textstring" ng-model="person.firstName" />
+            </umb-control-group>
+
+            <umb-control-group label="Last name" description="Person's last name'">
+                <input type="text" class="umb-editor umb-textstring" ng-model="person.lastName"></input>
+            </umb-control-group>
+
+            
+        </div>
+    </div>
+</umb-panel>
