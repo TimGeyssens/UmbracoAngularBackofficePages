@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using umbraco;
+using umbraco.BusinessLogic.Actions;
 using Umbraco.Core;
 using Umbraco.Web.Models.Trees;
 using Umbraco.Web.Mvc;
@@ -45,7 +47,17 @@ namespace UmbracoAngularBackofficePages.Trees
 
         protected override Umbraco.Web.Models.Trees.MenuItemCollection GetMenuForNode(string id, System.Net.Http.Formatting.FormDataCollection queryStrings)
         {
-            return new MenuItemCollection();
+            var menu = new MenuItemCollection();
+
+            if (id == Constants.System.Root.ToInvariantString())
+            {
+                // root actions              
+                menu.Items.Add<CreateChildEntity, ActionNew>(ui.Text("actions", ActionNew.Instance.Alias));
+                menu.Items.Add<RefreshNode, ActionRefresh>(ui.Text("actions", ActionRefresh.Instance.Alias), true);
+                return menu;
+            }
+
+            return menu;
         }
     }
 }
