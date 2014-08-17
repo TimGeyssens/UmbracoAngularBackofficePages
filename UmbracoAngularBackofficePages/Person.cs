@@ -8,19 +8,8 @@ namespace UmbracoAngularBackofficePages
     [DataContract(Name = "person")]
     public class Person
     {
-        public Person()
-        {
-            
-        }   
+        public Person(){}   
         
-        public Person(int id, string firstName, string lastName)
-        {
-            Id = id;
-            FirstName = firstName;
-            LastName = lastName;
-
-        }
-
         [PrimaryKeyColumn(AutoIncrement = true)]
         [DataMember(Name = "id")]
         public int Id { get; set; }
