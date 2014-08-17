@@ -1,10 +1,18 @@
 ﻿using System.Runtime.Serialization;
+using Umbraco.Core.Persistence;
+using Umbraco.Core.Persistence.DatabaseAnnotations;
 
 namespace UmbracoAngularBackofficePages
 {
+    [TableName("People")]
     [DataContract(Name = "person")]
     public class Person
     {
+        public Person()
+        {
+            
+        }   
+        
         public Person(int id, string firstName, string lastName)
         {
             Id = id;
@@ -13,6 +21,7 @@ namespace UmbracoAngularBackofficePages
 
         }
 
+        [PrimaryKeyColumn(AutoIncrement = true)]
         [DataMember(Name = "id")]
         public int Id { get; set; }
         [DataMember(Name = "firstName")]

@@ -8,6 +8,7 @@ using Umbraco.Core;
 using Umbraco.Web.Models.Trees;
 using Umbraco.Web.Mvc;
 using Umbraco.Web.Trees;
+using UmbracoAngularBackofficePages.Controllers;
 
 namespace UmbracoAngularBackofficePages.Trees
 {
@@ -22,10 +23,10 @@ namespace UmbracoAngularBackofficePages.Trees
             //check if we're rendering the root node's children
             if (id == Constants.System.Root.ToInvariantString())
             {
-                
+                var ctrl = new PersonApiController();
                 var nodes = new TreeNodeCollection();
 
-                foreach (var person in Data.GetAll())
+                foreach (var person in ctrl.GetAll())
                 {
                     var node = CreateTreeNode(
                         person.Id.ToString(),
