@@ -221,6 +221,7 @@
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterEvents.cs" />
+    <Compile Include="Sections\Section.cs" />
     <Compile Include="Trees\PeopleTreeController.cs" />
   </ItemGroup>
   <ItemGroup>

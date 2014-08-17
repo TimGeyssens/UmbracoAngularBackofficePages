@@ -12,7 +12,7 @@ using UmbracoAngularBackofficePages.Controllers;
 
 namespace UmbracoAngularBackofficePages.Trees
 {
-    [Tree("settings", "peopleTree", "People")]
+    [Tree("example", "peopleTree", "People")]
     [PluginController("Example")]
     public class PeopleTreeController: TreeController
     {
