@@ -14,18 +14,16 @@ namespace UmbracoAngularBackofficePages.Controllers
     {
         public IEnumerable<Person> GetAll()
         {
-            var db = UmbracoContext.Application.DatabaseContext.Database;
+         
             var query = new Sql().Select("*").From("people");
-
-            return db.Fetch<Person>(query);
+            return DatabaseContext.Database.Fetch<Person>(query);
         }
 
         public Person GetById(int id)
         {
-            var db = DatabaseContext.Database;
+           
             var query = new Sql().Select("*").From("people").Where<Person>(x => x.Id == id);
-
-            return db.Fetch<Person>(query).FirstOrDefault();
+            return DatabaseContext.Database.Fetch<Person>(query).FirstOrDefault();
             
         }
 
