@@ -27,5 +27,11 @@ namespace UmbracoAngularBackofficePages.Controllers
             return person;
         }
 
+        public bool DeleteById(int id)
+        {
+            //Delete
+            return true;
+        }
+
     }
 }

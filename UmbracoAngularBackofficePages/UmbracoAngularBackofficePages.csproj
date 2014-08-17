@@ -223,6 +223,8 @@
     <Compile Include="Trees\PeopleTreeController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\Example\backoffice\peopleTree\delete.html" />
+    <Content Include="App_Plugins\Example\backoffice\peopleTree\delete.controller.js" />
     <Content Include="App_Plugins\Example\backoffice\peopleTree\edit.controller.js" />
     <Content Include="App_Plugins\Example\backoffice\peopleTree\edit.html" />
     <Content Include="App_Plugins\Example\person.resource.js" />

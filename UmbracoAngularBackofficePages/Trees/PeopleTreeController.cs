@@ -48,13 +48,19 @@ namespace UmbracoAngularBackofficePages.Trees
         protected override Umbraco.Web.Models.Trees.MenuItemCollection GetMenuForNode(string id, System.Net.Http.Formatting.FormDataCollection queryStrings)
         {
             var menu = new MenuItemCollection();
-            
+
             if (id == Constants.System.Root.ToInvariantString())
             {
                 // root actions              
                 menu.Items.Add<CreateChildEntity, ActionNew>(ui.Text("actions", ActionNew.Instance.Alias));
                 menu.Items.Add<RefreshNode, ActionRefresh>(ui.Text("actions", ActionRefresh.Instance.Alias), true);
                 return menu;
+            }
+            else
+            {
+                
+                menu.Items.Add< ActionDelete>(ui.Text("actions", ActionDelete.Instance.Alias));
+                
             }
             return menu;
         }
