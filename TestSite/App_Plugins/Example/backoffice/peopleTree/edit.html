@@ -1,4 +1,4 @@
-﻿<form novalidate name="personForm"
+﻿<form name="personForm"
       ng-controller="People.PersonEditController"
       ng-show="loaded"
       ng-submit="save(person)"
@@ -28,11 +28,11 @@
 
 
                     <umb-control-group label="First name" description="Person's first name'">
-                        <input type="text" class="umb-editor umb-textstring" ng-model="person.firstName" />
+                        <input type="text" class="umb-editor umb-textstring" ng-model="person.firstName" required />
                     </umb-control-group>
 
                     <umb-control-group label="Last name" description="Person's last name'">
-                        <input type="text" class="umb-editor umb-textstring" ng-model="person.lastName"></input>
+                        <input type="text" class="umb-editor umb-textstring" ng-model="person.lastName" required />
                     </umb-control-group>
 
 
