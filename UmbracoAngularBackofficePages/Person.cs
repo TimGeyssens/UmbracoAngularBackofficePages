@@ -18,6 +18,9 @@ namespace UmbracoAngularBackofficePages
         [DataMember(Name = "lastName")]
         public string LastName { get; set; }
 
+        [DataMember(Name = "pictureId")]
+        public int PictureId { get; set; }
+
         public override string ToString()
         {
             return FirstName + " " + LastName;

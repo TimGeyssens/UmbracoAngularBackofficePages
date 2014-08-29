@@ -1,5 +1,5 @@
 ﻿angular.module("umbraco").controller("People.PersonEditController",
-	function ($scope, $routeParams, personResource, notificationsService, navigationService) {
+	function ($scope, $routeParams, personResource, notificationsService, navigationService, dialogService, entityResource, iconHelper) {
 
 	    $scope.loaded = false;
 
@@ -11,8 +11,26 @@
 	    //get a person id -> service
 	    personResource.getById($routeParams.id).then(function (response) {
 	        $scope.person = response.data;
+
+	        if ($scope.person.pictureId > 0){
+	            entityResource.getById($scope.person.pictureId, "Media").then(function (item) {
+	                //item.icon = iconHelper.convertFromLegacyIcon(item.icon);
+	                $scope.node = item;
+	            });
+	        }
+
 	        $scope.loaded = true;
+
 	    });
+	    }
+
+	    $scope.openMediaPicker = function() {
+	        dialogService.mediaPicker({ callback: populatePicture });
+	    }
+
+	    $scope.removePicture = function() {
+	        $scope.node = undefined;
+	        $scope.person.pictureId = 0;
 	    }
 
 	    $scope.save = function (person) {
@@ -22,4 +40,10 @@
 	            notificationsService.success("Success", person.firstName + " " + person.lastName + " has been saved");
 	        });
 	    };
+
+	    function populatePicture(item) {
+	        //item.icon = iconHelper.convertFromLegacyIcon(item.icon);
+	        $scope.node = item;
+	        $scope.person.pictureId = item.id;
+	    }
 	});

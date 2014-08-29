@@ -19,6 +19,8 @@ namespace UmbracoAngularBackofficePages
                 //Create DB table - and set overwrite to false
                 db.CreateTable<Person>(false);
             }
+
+            
         }
     }
 }

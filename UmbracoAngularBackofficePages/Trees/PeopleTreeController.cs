@@ -59,7 +59,7 @@ namespace UmbracoAngularBackofficePages.Trees
             }
             else
             {
-                
+                //menu.DefaultMenuAlias = ActionDelete.Instance.Alias;
                 menu.Items.Add< ActionDelete>(ui.Text("actions", ActionDelete.Instance.Alias));
                 
             }
