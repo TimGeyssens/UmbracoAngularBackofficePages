@@ -2,6 +2,7 @@
 	javascript: [
 	    '~/App_Plugins/Example/backoffice/peopletree/edit.controller.js',
 		'~/App_Plugins/Example/backoffice/peopletree/delete.controller.js',
-	    '~/App_Plugins/Example/person.resource.js'
+        '~/App_Plugins/Example/person.resource.js',
+        '~/App_Plugins/Example/umbMediaPicker.directive.js'
 	]
 }

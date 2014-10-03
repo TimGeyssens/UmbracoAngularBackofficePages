@@ -224,11 +224,14 @@
     <Compile Include="Trees\PeopleTreeController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\Example\backoffice\peopledashboard.html" />
     <Content Include="App_Plugins\Example\backoffice\peopleTree\delete.html" />
     <Content Include="App_Plugins\Example\backoffice\peopleTree\delete.controller.js" />
     <Content Include="App_Plugins\Example\backoffice\peopleTree\edit.controller.js" />
     <Content Include="App_Plugins\Example\backoffice\peopleTree\edit.html" />
     <Content Include="App_Plugins\Example\person.resource.js" />
+    <Content Include="App_Plugins\Example\umb-media-picker.html" />
+    <Content Include="App_Plugins\Example\umbMediaPicker.directive.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

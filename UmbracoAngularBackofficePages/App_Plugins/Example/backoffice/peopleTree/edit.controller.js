@@ -1,5 +1,5 @@
 ﻿angular.module("umbraco").controller("People.PersonEditController",
-	function ($scope, $routeParams, personResource, notificationsService, navigationService, dialogService, entityResource) {
+	function ($scope, $routeParams, personResource, notificationsService, navigationService) {
 
 	    $scope.loaded = false;
 
@@ -12,25 +12,11 @@
 	    personResource.getById($routeParams.id).then(function (response) {
 	        $scope.person = response.data;
 
-	        if ($scope.person.pictureId > 0){
-	            entityResource.getById($scope.person.pictureId, "Media").then(function (item) {
-	                $scope.node = item;
-	            });
-	        }
-
 	        $scope.loaded = true;
 
 	    });
 	    }
 
-	    $scope.openMediaPicker = function() {
-	        dialogService.mediaPicker({ callback: populatePicture });
-	    }
-
-	    $scope.removePicture = function() {
-	        $scope.node = undefined;
-	        $scope.person.pictureId = 0;
-	    }
 
 	    $scope.save = function (person) {
 	        personResource.save(person).then(function (response) {
@@ -41,8 +27,5 @@
 	        });
 	    };
 
-	    function populatePicture(item) {
-	        $scope.node = item;
-	        $scope.person.pictureId = item.id;
-	    }
+	   
 	});
