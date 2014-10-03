@@ -1,9 +1,9 @@
 ﻿angular.module("umbraco")
 .controller("People.PersonDeleteController",
-	function ($scope, personResource, navigationService) {
+	function ($scope, personResource, navigationService,treeService) {
 	    $scope.delete = function (id) {
 	        personResource.deleteById(id).then(function () {
-	            navigationService.syncTree({ tree: 'peopleTree', path: [-1, -1], forceReload: true });
+	            treeService.removeNode($scope.currentNode);
 	            navigationService.hideNavigation();
 	            
 	        });
